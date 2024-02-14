@@ -1,0 +1,53 @@
+---
+
+---
+
+<header
+  class="banner_section h-auto sm:h-auto sm:pb-7 pb-0 lg:h-[85vh] flex items-center justify-center"
+>
+  <div class="container">
+    <div class="banner_inner text-center py-4">
+      <h1
+        class="text-5xl sm:text-4xl lg:text-8xl font-bold uppercase font-teko_sans"
+      >
+        <span class="text-red-700">Hey!</span> Welcome to my Portfolio
+      </h1>
+      <p class="pt-6 text-2xl sm:text-2xl md:text-2xl lg:text-3xl">
+        Unlocking Imagination Through Pixels and Polygons: Where creativity
+        meets precision, my brother's mastery of 3D art and graphic design
+        elevates visual storytelling to new heights. With an eye for detail and
+        a passion for innovation, he brings dreams to life in a realm where
+        imagination knows no bounds. Explore a world where reality bends to the
+        will of pixels, and every design tells a captivating story.
+      </p>
+    </div>
+  </div>
+  <div class="video-container">
+    <video src="./videos/bg-1.mp4" autoplay loop muted></video>
+  </div>
+</header>
+
+<style>
+  header .video-container {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+  }
+  header .video-container video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  header .video-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.82);
+  }
+</style>

@@ -1,0 +1,28 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Banner from "../components/Banner.astro";
+import ArtGallary from "../components/ArtGallary.astro";
+---
+
+<Layout title="Jimit's Portfolio">
+  <div class="main_container bg-[url('/images/noise.51a05f55.png')]">
+    <Navbar />
+    <Banner />
+    <ArtGallary />
+  </div>
+</Layout>
+
+<style is:global>
+  .container {
+    max-width: 70%;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  @media (max-width 212px;) {
+    .container {
+      max-width: 95% !important;
+    }
+  }
+</style>
