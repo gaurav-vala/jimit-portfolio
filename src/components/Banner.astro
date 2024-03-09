@@ -2,15 +2,15 @@
 
 ---
 
-<header
-  class="banner_section relative py-20 h-100vh sm:h-auto sm:pb-7 lg:h-[100vh] flex items-center justify-center"
->
-  <div class="w-10/12 sm:w-[90%] lg:w-[80%] mx-auto">
-    <div class="banner_inner py-4 w-1/2 text-left">
+<header class="banner_section relative py-60 flex items-center justify-center">
+  <div class="container">
+    <div class="banner_inner py-4 text-center">
       <h1 class="text-5xl sm:text-4xl lg:text-8xl font-black uppercase italic">
-        <span class="text-red-700">Hey!</span> Welcome to my Portfolio
+        <span class="text-red-700">Hey!</span> I am Jimit
       </h1>
-      <p class="pt-6 text-2xl sm:text-2xl md:text-2xl lg:text-3xl">
+      <p
+        class="pt-6 text-2xl sm:text-2xl md:text-2xl lg:text-3xl max-w-[80%] mx-auto"
+      >
         Unlocking Imagination Through Pixels and Polygons: Where creativity
         meets precision, my brother's mastery of 3D art and graphic design
         elevates visual storytelling to new heights. With an eye for detail and
@@ -21,7 +21,7 @@
     </div>
   </div>
   <div class="video-container">
-    <video src="./videos/bg-1.mp4" autoplay loop muted></video>
+    <video src="./videos/bg_vdo.mp4" class="" autoplay loop muted></video>
   </div>
 </header>
 
@@ -38,6 +38,7 @@
     height: 100%;
     width: 100%;
     object-fit: cover;
+    object-position: bottom;
   }
   header .video-container::after {
     content: "";
@@ -46,6 +47,6 @@
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.82);
+    background-color: rgb(0 0 0 / 71%);
   }
 </style>

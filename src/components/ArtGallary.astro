@@ -1,13 +1,29 @@
 ---
+import { Image } from "astro:assets";
 
+const posters = await Astro.glob("/src/assets/posters/*").then((files) => {
+  return files.map((file) => file.default);
+});
+
+const three_d_posters = await Astro.glob("/src/assets/three-d-post/*").then(
+  (files) => {
+    return files.map((file) => file.default);
+  }
+);
+
+const wallpapers = await Astro.glob("/src/assets/wallpapers/*").then(
+  (files) => {
+    return files.map((file) => file.default);
+  }
+);
 ---
 
 <section
-  class="art_gallary bg-black bg-[url('/images/noise.51a05f55.png')] pt-10"
+  class="art_gallary bg-black bg-[url('/local_imgs/noise.51a05f55.png')] pt-10"
 >
-  <div class="container">
+  <div class="container mx-auto">
     <div class="art_gallary_intro text-center">
-      <h2 class="text-5xl font-semibold">Welcome to Art Gallary!</h2>
+      <h2 class="text-5xl font-semibold">Welcome to My Art Gallary!</h2>
       <p class="text-3xl italic pt-5">
         These are some the artworks that i worked on, hope you like them
       </p>
@@ -17,8 +33,30 @@
   <div
     class="art_gallary_inner columns-2 sm:columns-2 md:columns-2 lg:columns-4 gap-0 pt-10"
   >
+    {
+      posters.map((image) => (
+        <Image src={image} alt="A description of my image." />
+      ))
+    }
+
+    {
+      three_d_posters.map((image) => (
+        <Image src={image} alt="A description of my image." />
+      ))
+    }
+
+    {
+      wallpapers.map((image) => (
+        <Image src={image} alt="A description of my image." />
+      ))
+    }
+  </div>
+
+  <!-- <div
+    class="art_gallary_inner columns-2 sm:columns-2 md:columns-2 lg:columns-4 gap-0 pt-10"
+  >
     <div class="">
-      <img class="object-cover" src="/images/01.webp" alt="" />
+      <Image src={IMG01} alt="A description of my image." />
     </div>
     <div class="h-full w-full">
       <img src="/images/02.webp" alt="" />
@@ -54,7 +92,7 @@
       <img src="/images/11.webp" alt="" />
     </div>
     <div class="h-full w-full">
-      <img class="" src="/images/13.webp" alt="" />
+      <img src="/images/13.webp" alt="" />
     </div>
     <div class="h-full w-full">
       <img src="/images/15.webp" alt="" />
@@ -68,16 +106,16 @@
     <div class="h-full w-full">
       <img src="/images/18.webp" alt="" />
     </div>
-    <div class="h-full w-full col-span-2">
+    <div class="h-full w-full">
       <img src="/images/19.webp" alt="" />
     </div>
-    <div class="h-full w-full col-span-2">
+    <div class="h-full w-full">
       <img src="/images/20.webp" alt="" />
     </div>
     <div class="h-full w-full">
       <img src="/images/12.webp" alt="" />
     </div>
-  </div>
+  </div> -->
 </section>
 
 <style></style>
