@@ -3,15 +3,21 @@ const nav_link_arr = ["3D Works", "Posters", "Wallpapers"];
 ---
 
 <nav
-  class="navbar py-4 fixed top-0 left-0 w-full bg-black bg-opacity-40 backdrop-blur-md"
+  class="navbar py-4 fixed top-0 left-0 w-full bg-black bg-opacity-40 backdrop-blur-md z-50"
 >
   <div class="w-10/12 sm:w-[90%] lg:w-3/5 mx-auto">
     <!-- LOGO CONTAINER -->
     <div class="logo_container">
       <p class="stack uppercase text-center" style="--stacks: 3;">
-        <span style="--index: 0;">JIMIT</span>
-        <span style="--index: 1;">JIMIT</span>
-        <span style="--index: 2;">JIMIT</span>
+        <span style="--index: 0;"
+          ><img src="/local_imgs/Logo.png" alt="" /></span
+        >
+        <span style="--index: 1;">
+          <img src="/local_imgs/Logo.png" alt="" />
+        </span>
+        <span style="--index: 2;">
+          <img src="/local_imgs/Logo.png" alt="" />
+        </span>
       </p>
     </div>
   </div>
@@ -21,6 +27,12 @@ const nav_link_arr = ["3D Works", "Posters", "Wallpapers"];
   .stack {
     display: grid;
     grid-template-columns: 1fr;
+  }
+
+  .stack img {
+    width: 180px;
+    margin: 0 auto;
+    filter: invert(1);
   }
 
   .stack span {
