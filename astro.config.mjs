@@ -3,13 +3,12 @@ import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 import markdoc from "@astrojs/markdoc";
 import keystatic from "@keystatic/astro";
-import netlify from "@astrojs/netlify";
 
-import vercel from "@astrojs/vercel/serverless";
+import vercelServerless from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), react(), markdoc(), keystatic()],
-  output: "hybrid",
-  adapter: vercel()
+  output: "server",
+  adapter: vercelServerless(),
 });
