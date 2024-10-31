@@ -3,11 +3,11 @@ import { config, fields, collection } from "@keystatic/core";
 
 export default config({
   storage: {
-    kind: "local",
-    // repo: {
-    //   name: "jimit-portfolio",
-    //   owner: "gaurav-vala",
-    // },
+    kind: "github",
+    repo: {
+      name: "jimit-portfolio",
+      owner: "gaurav-vala",
+    },
   },
   collections: {
     posters: collection({
