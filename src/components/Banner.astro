@@ -2,51 +2,64 @@
 
 ---
 
-<header class="banner_section relative py-60 flex items-center justify-center">
-  <div class="container">
-    <div class="banner_inner py-4 text-center">
-      <h1 class="text-5xl sm:text-4xl lg:text-8xl font-black uppercase italic">
-        <span class="text-red-700">Hey!</span> I am Jimit
+<header class="banner_section bg-slate-300 lg:h-screen">
+  <div class="container px-5 mx-auto lg:h-full relative">
+    <div
+      class="relative py-12 xl:p-0 lg:absolute w-full lg:w-4/6 xl:w-2/4 lg:bottom-32"
+    >
+      <h1
+        data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-duration="600"
+        class="font-airnt uppercase text-3xl md:text-5xl lg:text-6xl xl:text-7xl leading-none tracking-wider font-bold text-custom_yellow"
+      >
+        jIMIT’s collections
       </h1>
       <p
-        class="pt-6 text-2xl sm:text-2xl md:text-2xl lg:text-3xl max-w-[80%] mx-auto"
+        data-aos="fade-up"
+        data-aos-offset="200"
+        data-aos-duration="600"
+        data-aos-delay="100"
+        class="text-lg lg:text-lg xl:text-xl pt-7"
       >
-        Unlocking Imagination Through Pixels and Polygons: Where creativity
-        meets precision, my brother's mastery of 3D art and graphic design
-        elevates visual storytelling to new heights. With an eye for detail and
-        a passion for innovation, he brings dreams to life in a realm where
-        imagination knows no bounds. Explore a world where reality bends to the
-        will of pixels, and every design tells a captivating story.
+        Welcome to my corner of the internet, here I share all the juicy fruits
+        of my creative journey. showcasing all kinds of styles that made in
+        curious and made me wanna go into rabbit hole of creating these worlds
+        and bringing in all these character that really fascinated me.
+        So!!fasten your seatbelts because this a journey that you will not
+        regret getting onboard.
       </p>
+      <a
+        href="/contact"
+        data-aos="fade-up"
+        data-aos-duration="600"
+        data-aos-delay="200"
+        class="bg-black p-4 lg:text-lg xl:text-xl mt-7 inline-block"
+        >Have an idea to discuss?</a
+      >
     </div>
   </div>
-  <div class="video-container">
-    <video src="./videos/bg_vdo.mp4" class="" autoplay loop muted></video>
-  </div>
+  <img
+    class="w-full block xl:hidden h-[500px] object-cover object-center"
+    src="/src/assets/bg_banner_mobile.png"
+    alt=""
+  />
 </header>
 
 <style>
-  header .video-container {
-    z-index: -1;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100vw;
+  .banner_section {
+    background-image: url("../assets/bg_banner.png");
+    background-size: cover;
+    background-repeat: no-repeat;
   }
-  header .video-container video {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    object-position: bottom;
-  }
-  header .video-container::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgb(0 0 0 / 71%);
+
+  @media (max-width: 768px) {
+    .banner_section {
+      background-image: none;
+      background-color: #bb0000;
+      background-size: cover;
+      background-position: center bottom;
+      background-repeat: no-repeat;
+    }
   }
 </style>

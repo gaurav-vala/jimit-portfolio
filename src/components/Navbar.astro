@@ -1,13 +1,28 @@
 ---
-const nav_link_arr = ["3D Works", "Posters", "Wallpapers"];
+const menu_items = [
+  {
+    menu: "Home",
+    link: "/",
+  },
+  {
+    menu: "Showcase",
+    link: "/showcase",
+  },
+  {
+    menu: "Contact Me",
+    link: "/contact",
+  },
+];
 ---
 
 <nav
-  class="navbar py-4 fixed top-0 left-0 w-full bg-black bg-opacity-40 backdrop-blur-md z-50"
+  class="navbar py-4 relative bg-custom_red md:bg-custom_red lg:bg-transparent md:relative lg:fixed top-0 left-0 w-full z-50"
 >
-  <div class="w-10/12 sm:w-[90%] lg:w-3/5 mx-auto">
+  <div
+    class="container mx-auto px-5 gap-4 flex items-center justify-between flex-col md:flex-col lg:flex-row"
+  >
     <!-- LOGO CONTAINER -->
-    <div class="logo_container">
+    <div class="logo_container" data-aos="fade-in">
       <p class="stack uppercase text-center" style="--stacks: 3;">
         <span style="--index: 0;"
           ><img src="/local_imgs/Logo.png" alt="" /></span
@@ -20,10 +35,31 @@ const nav_link_arr = ["3D Works", "Posters", "Wallpapers"];
         </span>
       </p>
     </div>
+    <ul
+      data-aos="fade-in"
+      class="flex items-center gap-4 md:gap-8 bg-[#171717b0] backdrop-blur-sm p-2 lg:py-5 lg:px-8 rounded-md"
+    >
+      {
+        menu_items.map((single_item, index) => (
+          <li class="">
+            <a
+              class="text-white font-CubaoVariable text-xl"
+              href={single_item.link}
+            >
+              {single_item.menu}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
   </div>
 </nav>
 
 <style>
+  .logo_container {
+    width: 120px;
+  }
+
   .stack {
     display: grid;
     grid-template-columns: 1fr;
@@ -98,12 +134,6 @@ const nav_link_arr = ["3D Works", "Posters", "Wallpapers"];
     100% {
       text-shadow: none;
       transform: none;
-    }
-  }
-
-  @media (max-width: 991px) {
-    .stack img {
-      width: 130px;
     }
   }
 </style>

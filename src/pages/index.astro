@@ -1,16 +1,70 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Navbar from "../components/Navbar.astro";
 import Banner from "../components/Banner.astro";
-import ArtGallary from "../components/ArtGallary.astro";
+import { getCollection } from "astro:content";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+
+const posts = await getCollection("posters");
+
+const threed_poster = posts.filter(
+  (post) => post.data.img_type === "3d-poster"
+);
+const poster = posts.filter((post) => post.data.img_type === "poster");
 ---
 
-<Layout title="Jimit's Portfolio">
-  <div class="main_container bg-[url('/local_imgs/noise.51a05f55.png')]">
+<Layout title="Jimit's Art Collection">
+  <!-- <div class="main_container bg-[url('/local_imgs/noise.51a05f55.png')]"> -->
+  <div class="main_container">
     <Navbar />
     <Banner />
-    <ArtGallary />
   </div>
+
+  <section class="py-12 lg:py-20 xl:py-28">
+    <div class="container px-5 mx-auto">
+      <h2 class="text-custom_red text-5xl xl:text-7xl uppercase">skills</h2>
+      <div class="showcase_container py-12 lg:py-16 xl:py-28">
+        <h3 class="text-custom_yellow text-3xl">3d Work</h3>
+        <div class="columns-2 xl:columns-3 gap-0 pt-5 lg:pt-5 xl:pt-9">
+          {
+            threed_poster.slice(0, 3).map((single_post: any, index) =>
+              single_post.data.image ? (
+                <a href="/showcase">
+                  <img
+                    data-aos="fade-up"
+                    data-aos-duration="600"
+                    data-aos-delay={index * 100}
+                    src={single_post.data.image}
+                    alt={single_post.data.caption}
+                  />
+                </a>
+              ) : null
+            )
+          }
+        </div>
+      </div>
+      <div class="showcase_container lg:py-16 xl:py-28">
+        <h3 class="text-custom_yellow text-3xl">Posters</h3>
+        <div class="columns-2 xl:columns-3 gap-0 pt-5 lg:pt-5 xl:pt-9">
+          {
+            poster.slice(0, 3).map((single_post: any, index) =>
+              single_post.data.image ? (
+                <a href="/showcase">
+                  <img
+                    data-aos="fade-up"
+                    data-aos-delay={index * 100}
+                    src={single_post.data.image}
+                    alt={single_post.data.caption}
+                  />
+                </a>
+              ) : null
+            )
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+  <Footer />
 </Layout>
 
 <style is:global>

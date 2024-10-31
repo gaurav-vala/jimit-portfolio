@@ -4,8 +4,12 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        daker_grotesk: ["Darker Grotesque", "sans-serif"],
-        teko_sans: ["Teko", "sans-serif"],
+        airnt: ["Airnt", "sans-serif"],
+        dm_sans: ["DM Sans", "sans-serif"],
+      },
+      colors: {
+        custom_yellow: "#FFA500",
+        custom_red: "#BB0000",
       },
     },
   },

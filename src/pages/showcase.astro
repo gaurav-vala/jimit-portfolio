@@ -1,0 +1,40 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+
+import { Image } from "astro:assets";
+
+const posts = await getCollection("posters");
+
+const posters = posts.filter((post) => post?.data?.img_type === "poster");
+const threed_poster = posts.filter(
+  (post) => post?.data.img_type === "3d-poster"
+);
+
+// console.log(posts);
+---
+
+<Layout title="Jimit's Art Collection">
+  <!-- <div class="main_container bg-[url('/local_imgs/noise.51a05f55.png')]"> -->
+  <div class="main_container">
+    <Navbar />
+  </div>
+  <div class="container px-5 md:pt-12 mx-auto">
+    <div class="py-14 xl:py-24 columns-2 xl:columns-3 gap-0">
+      {
+        posts.map((single_post: any, index) => (
+          <Image
+            loading="lazy"
+            width="500"
+            height="500"
+            src={single_post.data.image}
+            alt={single_post.data.caption}
+          />
+        ))
+      }
+    </div>
+  </div>
+  <Footer />
+</Layout>
